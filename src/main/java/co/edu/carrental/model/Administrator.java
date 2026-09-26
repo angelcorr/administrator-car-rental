@@ -77,7 +77,7 @@ public class Administrator {
     return rentalModalityList;
   }
 
-  public static class Builder{
+  public static class Builder {
     private String commercialName;
     private Integer nit;
     private String address;
@@ -123,5 +123,4 @@ public class Administrator {
       return new Administrator(this);
     }
   }
-
 }
