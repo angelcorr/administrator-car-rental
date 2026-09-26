@@ -56,7 +56,7 @@ public class ClientService {
 
     long sum = 0;
 
-//     we divide by two to split the phone number and save time
+//    we divide by two to split the phone number and save time
 //    by only needing to compare and verify in less iterations
     for (long i = 1; i <= number / 2; i++) {
       if (number % i == 0) {
