@@ -11,13 +11,31 @@ public class Vehicle {
     private int age;
     private VehicleType type;
     private double dailyCharge;
+
     // constructor
-    public Vehicle (String plate, String brand, String model, int age, VehicleType type, double dailyCharge) {
+    public Vehicle(String plate, String brand, String model, int age, VehicleType type, double dailyCharge) {
         this.plate = plate;
         this.brand = brand;
         this.model = model;
         this.age = age;
-        this.type =type;
+        this.type = type;
+        this.dailyCharge = dailyCharge;
+
+        //validaciones
+        if(plate ==null||plate.isBlank()||
+                brand ==null||brand.isBlank()||
+                model ==null||model.isBlank()||
+                type ==null) {
+            throw new IllegalArgumentException("Todos los datos del vehículo son necesarios.");
+        }
+
+        if(age< 0) {
+            throw new IllegalArgumentException("La edad/año del vehículo no es válida.");
+        }
+
+        if(dailyCharge <=0) {
+            throw new IllegalArgumentException("La tarifa diaria debe ser mayor a igual a cero.");
+        }
     }
 
     //Getters and setters
@@ -25,7 +43,7 @@ public class Vehicle {
         return plate;
     }
 
-    public void setFullName(String plate) {
+    public void setPlate(String plate) {
         this.plate = plate;
     }
 
