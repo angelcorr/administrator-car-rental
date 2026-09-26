@@ -6,6 +6,7 @@ public class Client {
     private String fullName;
     private String id;
     private String phone;
+    private String email;
     private String age;
     private LocalDate createAt;
 
@@ -14,6 +15,7 @@ public class Client {
         this.fullName = builder.fullName;
         this.id = builder.id;
         this.phone = builder.phone;
+        this.email = builder.email;
         this.age = builder.age;
         this.createAt = builder.createAt;
     }
@@ -43,6 +45,7 @@ public class Client {
         private String fullName;
         private String id;
         private String phone;
+        private String email;
         private String age;
         private LocalDate createAt;
 
@@ -61,6 +64,11 @@ public class Client {
             return this;
         }
 
+        public Builder email(String email) {
+            this.email = email;
+            return this;
+        }
+
         public Builder age(String age) {
             this.age = age;
             return this;
@@ -72,8 +80,8 @@ public class Client {
         }
 
         public Client build() {
-            if (fullName == null || id == null || phone == null || age == null || createAt == null) {
-                throw new IllegalStateException("Full name, identification, phone, age, createdAt are required to be able to create a patient");
+            if (fullName == null || id == null || phone == null || email == null || age == null || createAt == null) {
+                throw new IllegalStateException("Full name, identification, phone, email, age, createdAt are required to be able to create a patient");
             }
 
             return new Client(this);
