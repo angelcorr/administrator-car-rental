@@ -6,56 +6,77 @@ public class Client {
     private String fullName;
     private String id;
     private String phone;
-    private int age;
+    private String age;
     private LocalDate createAt;
 
     // constructor
-    public Client(String fullName, String id, String phone, int age, LocalDate createAt) {
-        this.fullName = fullName;
-        this.id = id;
-        this.phone = phone;
-        this.age = age;
-        this.createAt = createAt;
+    private Client(Builder builder) {
+        this.fullName = builder.fullName;
+        this.id = builder.id;
+        this.phone = builder.phone;
+        this.age = builder.age;
+        this.createAt = builder.createAt;
     }
 
-    //Getters and setters
+    //Getters
     public String getFullName(){
         return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
     }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public int getAge() {
+    public String getAge() {
         return age;
-    }
-
-    public void setAge(int age) {
-        this.age=age;
     }
 
     public LocalDate getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(LocalDate createAt) {
-        this.createAt=createAt;
+    public static class Builder {
+        private String fullName;
+        private String id;
+        private String phone;
+        private String age;
+        private LocalDate createAt;
+
+        public Builder fullName(String fullName) {
+            this.fullName = fullName;
+            return this;
+        }
+
+        public Builder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder phone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+
+        public Builder age(String age) {
+            this.age = age;
+            return this;
+        }
+
+        public Builder createAt(LocalDate createAt) {
+            this.createAt = createAt;
+            return this;
+        }
+
+        public Client build() {
+            if (fullName == null || id == null || phone == null || age == null || createAt == null) {
+                throw new IllegalStateException("Full name, identification, phone, age, createdAt are required to be able to create a patient");
+            }
+
+            return new Client(this);
+        }
     }
 }
