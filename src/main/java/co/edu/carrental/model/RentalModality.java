@@ -1,0 +1,73 @@
+package co.edu.carrental.model;
+
+import enums.Modality;
+import enums.RentState;
+
+public abstract class RentalModality {
+
+    private String code;
+    private String name;
+    private String description;
+    private int minDuration;
+    private double dailyCharge;
+    public RentState state;
+
+    public RentalModality(String code,String name,String description,int minDuration, double dailyCharge,RentState state){
+    this.code = code;
+    this.name = name;
+    this.description = description;
+    this.minDuration = minDuration;
+    this.dailyCharge = dailyCharge;
+    this.state= state;
+}
+
+
+public abstract Modality getModality();
+public abstract double calculatecharge(int minDuration,int dailyCharge);
+
+
+    public String getCode(){
+    return code;
+}
+    public void setcode(String code){
+        this.code = code ;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getDescription(){
+        return description;
+    }
+    public void setDescription(String description){
+        this.description = description;
+    }
+    public int getMinDuration(){
+        return minDuration;
+    }
+
+    public void setMinDuration(int minDuration){
+        this.minDuration = minDuration;
+    }
+
+    public double getDailyCharge() {
+        return dailyCharge;
+    }
+
+    public void setDailyCharge(double dailyCharge) {
+        this.dailyCharge = dailyCharge;
+    }
+
+    public RentState getState() {
+        return state;
+    }
+
+    public void setState(RentState state) {
+        this.state = state;
+    }
+}
