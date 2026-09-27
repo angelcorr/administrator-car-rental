@@ -1,6 +1,7 @@
 package co.edu.carrental.service;
 
 import co.edu.carrental.model.Vehicle;
+import co.edu.carrental.model.Administrator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class VehicleService {
-  private final List<Vehicle> vehicles = new ArrayList<>();
+  private final List<Vehicle> vehicles = Administrator.getInstance().getVehicleList();
 
   public void addVehicle(Vehicle vehicle) {
     verifyIfVehicleExists(vehicle.getPlate());
@@ -32,6 +33,10 @@ public class VehicleService {
     return vehicles.stream()
         .filter(Vehicle::isAvailable)
         .collect(Collectors.toList());
+  }
+
+  public List<Vehicle> getAllVehicles() {
+    return new ArrayList<>(vehicles);
   }
 
   public boolean updateAvailability(String plate, boolean available) {
