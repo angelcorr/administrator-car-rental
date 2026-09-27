@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.carrental.controller.AdministratorController">
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+
+    <Label text="Company &amp; Administrator Profile Information">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+
+    <!-- Panel de Información Solo Lectura -->
+    <GridPane hgap="20.0" vgap="15.0">
+        <!-- Commercial Name -->
+        <Label text="Commercial Name:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="lblCommercialName" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <!-- NIT -->
+        <Label text="NIT:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label fx:id="lblNit" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <!-- Address -->
+        <Label text="Address:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label fx:id="lblAddress" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <!-- Phone Number -->
+        <Label text="Phone Number:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label fx:id="lblPhoneNumber" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <!-- Email -->
+        <Label text="Email Address:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label fx:id="lblEmail" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+        <!-- Website -->
+        <Label text="Website:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <Label fx:id="lblWebsite" text="-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    </GridPane>
+</VBox>

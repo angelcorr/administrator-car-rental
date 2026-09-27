@@ -13,10 +13,10 @@ public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    URL fxmlLocation = Main.class.getResource("/view/vehicle-view.fxml");
+    URL fxmlLocation = Main.class.getResource("/view/administrator-view.fxml");
 
     if (fxmlLocation == null) {
-      fxmlLocation = Thread.currentThread().getContextClassLoader().getResource("/view/vehicle-view.fxml");
+      fxmlLocation = Thread.currentThread().getContextClassLoader().getResource("/view/administrator-view.fxml");
     }
 
     if (fxmlLocation == null) {
