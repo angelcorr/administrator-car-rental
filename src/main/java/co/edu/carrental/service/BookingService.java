@@ -1,12 +1,11 @@
 package co.edu.carrental.service;
 import co.edu.carrental.model.Booking;
-import co.edu.carrental.model.AditionalService;
-import co.edu.carrental.model.Client;
+import co.edu.carrental.model.AdditionalService;
 
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.time.LocalDate;
 
 public class BookingService {
 
@@ -53,7 +52,7 @@ public class BookingService {
     public double calculateServicesCost(Booking booking) {
         double total = 0;
         if (booking.getAdditionalServices() != null) {
-            for (AditionalService service : booking.getAdditionalServices()) {
+            for (AdditionalService service : booking.getAdditionalServices()) {
                 total += service.getPrice();
             }
         }
@@ -74,5 +73,28 @@ public class BookingService {
         double discountAmount = booking.getDiscount().calculate(subtotal, days);
         return subtotal - discountAmount;
     }
+    //calcular ingresos del periodo
+    public double calculateIncomeByPeriod(LocalDate from, LocalDate to) {
+        if (from == null || to == null) {
+            throw new IllegalArgumentException("\n" +
+                    "You must enter the start date and the end date.");
+        }
+        if (to.isBefore(from)) {
+            throw new IllegalArgumentException("The end date cannot be before the start date.");
+        }
 
+        double income = 0;
+
+        // Recorremos todas las reservas registradas
+        for (Booking booking : bookings) {
+            LocalDate start = booking.getStarDate();
+
+            // Si la fecha de inicio esta entre from y to (incluyendo los extremos), se suma
+            if (!start.isBefore(from) && !start.isAfter(to)) {
+                income += calculateTotal(booking);
+            }
+        }
+
+        return income;
+    }
 }

@@ -34,14 +34,6 @@ public void validateDuration(int dias) {
 
 }
 
-
-//calcular valor
-public final double calculateValue(int dias){
-validateDuration(dias);
-double base= dailyCharge*dias;
-return base+ calculatecharge(dias,dailyCharge);
-    }
-
 // disponilidad
 
     public boolean availability(){

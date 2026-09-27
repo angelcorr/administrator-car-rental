@@ -1,6 +1,6 @@
 package co.edu.carrental.model;
 
-public class AditionalService {
+public class AdditionalService {
 
     private String code;
     private String name;
@@ -9,7 +9,7 @@ public class AditionalService {
     private boolean availability;
 
 
-    public AditionalService (String code, String name, String description,double price,boolean availability){
+    public AdditionalService(String code, String name, String description, double price, boolean availability){
         this.code = code;
         this.name = name;
         this.description = description;
