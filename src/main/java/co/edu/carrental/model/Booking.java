@@ -1,7 +1,6 @@
 package co.edu.carrental.model;
 import Discount.IDiscount;
 import java.util.ArrayList;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -15,12 +14,12 @@ public class Booking {
     private final Vehicle vehicle;
     private final RentalModality rentalModality;
     private final IDiscount discount;
-    private final List<AditionalService> additionalServices;
+    private final List<AdditionalService> additionalServices;
 
 
     //constructor
     public Booking(String code, LocalDate startDate, LocalDate endDate, Client client, Vehicle vehicle, RentalModality rentalModality
-            , IDiscount discount, List<AditionalService> additionalServices) {
+            , IDiscount discount, List<AdditionalService> additionalServices) {
         this.code = code;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -54,7 +53,7 @@ public class Booking {
         private Vehicle vehicle;
         private RentalModality rentalModality;
         private IDiscount discount;
-        private List<AditionalService> additionalServices = new ArrayList<>();
+        private List<AdditionalService> additionalServices = new ArrayList<>();
 
 
         public Builder code(String code) {
@@ -91,7 +90,7 @@ public class Booking {
             return this;
         }
 
-        public Builder addAditionalService(AditionalService service) {
+        public Builder addAditionalService(AdditionalService service) {
             if (service != null && service.isAvailability()) {
                 this.additionalServices.add(service);
             }
@@ -155,7 +154,7 @@ public Booking build(){
     }
 
 
-    public List<AditionalService> getAdditionalServices() {
+    public List<AdditionalService> getAdditionalServices() {
         return additionalServices;
     }
 }

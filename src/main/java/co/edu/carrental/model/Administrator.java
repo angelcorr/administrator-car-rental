@@ -1,6 +1,7 @@
 package co.edu.carrental.model;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class Administrator {
   private static Administrator instance;
@@ -14,6 +15,7 @@ public class Administrator {
   private List<Client> clientList;
   private List<Vehicle> vehicleList;
   private List<RentalModality> rentalModalityList;
+  private final List<AdditionalService> additionalServiceList = new ArrayList<>();
 //  private List<Reservations> reservationList;
 
   private Administrator(Builder builder) {
@@ -76,6 +78,8 @@ public class Administrator {
   public List<RentalModality> getRentalModalityList() {
     return rentalModalityList;
   }
+
+  public List<AdditionalService> getAdditionalServiceList() {return additionalServiceList;}
 
   public static class Builder {
     private String commercialName;
