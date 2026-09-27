@@ -1,5 +1,6 @@
 package co.edu.carrental.service;
 
+import co.edu.carrental.model.Administrator;
 import co.edu.carrental.model.Client;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class ClientService {
-  private final List<Client> clients = new ArrayList<>();
+  private final List<Client> clients = Administrator.getInstance().getClientList();
 
   public void addClient(Client client) {
     verifyIfClientExists(client.getId());

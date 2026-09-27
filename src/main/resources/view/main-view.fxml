@@ -26,6 +26,7 @@
                 <Button maxWidth="1.7976931348623157E308" onAction="#showClientView" style="-fx-background-color: #334155; -fx-text-fill: white; -fx-alignment: CENTER-LEFT;" text="Clients" />
                 <Button maxWidth="1.7976931348623157E308" onAction="#showVehicleView" style="-fx-background-color: #334155; -fx-text-fill: white; -fx-alignment: CENTER-LEFT;" text="Vehicles" />
                 <Button maxWidth="1.7976931348623157E308" onAction="#showAdministratorView" style="-fx-background-color: #334155; -fx-text-fill: white; -fx-alignment: CENTER-LEFT;" text="Company Info" />
+                <Button maxWidth="1.7976931348623157E308" onAction="#showBookingView" style="-fx-background-color: #334155; -fx-text-fill: white; -fx-alignment: CENTER-LEFT;" text="Bookings" />
             </children>
         </VBox>
     </left>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.carrental.controller.BookingController">
+    <content>
+        <VBox spacing="12.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+            <Label text="Booking Management">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+
+            <!-- Formulario de la reserva -->
+            <GridPane hgap="10.0" vgap="10.0">
+                <Label text="Client:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <ComboBox fx:id="cmbClient" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Vehicle:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <ComboBox fx:id="cmbVehicle" prefWidth="220.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                <Label text="Modality:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cmbModality" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Discount:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cmbDiscount" prefWidth="220.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <Label text="Start date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <DatePicker fx:id="dpStart" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="End date:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <DatePicker fx:id="dpEnd" prefWidth="220.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            </GridPane>
+
+            <!-- Servicios adicionales: se llenan con CheckBox desde el controlador -->
+            <Label text="Additional services:" style="-fx-font-weight: bold;" />
+            <FlowPane fx:id="boxServices" hgap="15.0" vgap="8.0" />
+
+            <!-- Botones -->
+            <HBox spacing="10.0">
+                <Button text="Calculate Total" onAction="#handleCalculateTotal" style="-fx-background-color: #0288d1; -fx-text-fill: white;" />
+                <Button text="Confirm Booking" onAction="#handleConfirmBooking" style="-fx-background-color: #2e7d32; -fx-text-fill: white;" />
+                <Button text="Clear" onAction="#handleClearFields" />
+            </HBox>
+
+            <Label fx:id="lblMessage" text="" style="-fx-font-weight: bold;" />
+
+            <!-- Desglose del valor -->
+            <Label fx:id="lblSummary" text="" wrapText="true"
+                   style="-fx-background-color: #f1f5f9; -fx-padding: 10; -fx-background-radius: 6;" />
+
+            <Label text="Coverage (Premium):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbCoverage" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <!-- Tabla de reservas -->
+            <Label text="Registered bookings" style="-fx-font-weight: bold;" />
+            <TableView fx:id="tblBookings" prefHeight="220.0">
+                <columns>
+                    <TableColumn fx:id="colCode" prefWidth="80.0" text="Code" />
+                    <TableColumn fx:id="colClient" prefWidth="140.0" text="Client" />
+                    <TableColumn fx:id="colVehicle" prefWidth="90.0" text="Vehicle" />
+                    <TableColumn fx:id="colModality" prefWidth="130.0" text="Modality" />
+                    <TableColumn fx:id="colStart" prefWidth="95.0" text="Start" />
+                    <TableColumn fx:id="colEnd" prefWidth="95.0" text="End" />
+                    <TableColumn fx:id="colTotal" prefWidth="110.0" text="Total" />
+                </columns>
+            </TableView>
+
+            <Separator />
+
+            <!-- Ingresos por periodo -->
+            <Label text="Income by period" style="-fx-font-weight: bold;" />
+            <HBox spacing="10.0">
+                <Label text="From:" />
+                <DatePicker fx:id="dpIncomeFrom" prefWidth="150.0" />
+                <Label text="To:" />
+                <DatePicker fx:id="dpIncomeTo" prefWidth="150.0" />
+                <Button text="Calculate Income" onAction="#handleCalculateIncome" style="-fx-background-color: #7c3aed; -fx-text-fill: white;" />
+            </HBox>
+            <Label fx:id="lblIncome" text="" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+        </VBox>
+    </content>
+</ScrollPane>
