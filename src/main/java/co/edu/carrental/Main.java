@@ -13,12 +13,10 @@ public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    // Carga utilizando el ClassLoader raíz
-    URL fxmlLocation = Main.class.getResource("/view/client-view.fxml");
+    URL fxmlLocation = Main.class.getResource("/view/vehicle-view.fxml");
 
     if (fxmlLocation == null) {
-      // Intento secundario si el primer slash es omitido por el ClassLoader del hilo
-      fxmlLocation = Thread.currentThread().getContextClassLoader().getResource("view/client-view.fxml");
+      fxmlLocation = Thread.currentThread().getContextClassLoader().getResource("/view/vehicle-view.fxml");
     }
 
     if (fxmlLocation == null) {

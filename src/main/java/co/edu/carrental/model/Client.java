@@ -33,6 +33,10 @@ public class Client {
         return phone;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public String getAge() {
         return age;
     }
