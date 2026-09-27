@@ -57,7 +57,7 @@
             <TableColumn fx:id="colFullName" prefWidth="180.0" text="Full Name" />
             <TableColumn fx:id="colPhone" prefWidth="120.0" text="Phone" />
             <TableColumn fx:id="colEmail" prefWidth="180.0" text="Email" />
-            <TableColumn fx:id="colAge" prefWidth="60.0" text="Age" />
+            <TableColumn fx:id="colAge" prefWidth="180.0" text="Age" />
         </columns>
     </TableView>
 </VBox>

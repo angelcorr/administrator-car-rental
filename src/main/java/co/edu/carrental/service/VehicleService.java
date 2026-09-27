@@ -28,9 +28,9 @@ public class VehicleService {
         .findFirst();
   }
 
-  private List<Vehicle> getAvailableVehicles() {
+  public List<Vehicle> getAvailableVehicles() {
     return vehicles.stream()
-        .filter(Vehicle::getAvailability)
+        .filter(Vehicle::isAvailable)
         .collect(Collectors.toList());
   }
 

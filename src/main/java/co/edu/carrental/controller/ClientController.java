@@ -36,9 +36,9 @@ public class ClientController {
 
   @FXML
   public void initialize() {
-    colDocument.setCellValueFactory(new PropertyValueFactory<>("idDocument"));
+    colDocument.setCellValueFactory(new PropertyValueFactory<>("id"));
     colFullName.setCellValueFactory(new PropertyValueFactory<>("fullName"));
-    colPhone.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+    colPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
     colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
     colAge.setCellValueFactory(new PropertyValueFactory<>("age"));
 

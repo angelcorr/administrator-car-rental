@@ -47,7 +47,7 @@ public class Vehicle {
         return dailyCharge;
     }
 
-    public boolean getAvailability() {
+    public boolean isAvailable() {
         return isAvailable;
     }
 
