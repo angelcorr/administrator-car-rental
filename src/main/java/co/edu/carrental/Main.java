@@ -1,32 +1,26 @@
 package co.edu.carrental;
 
-import co.edu.carrental.model.Administrator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 
 public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    URL fxmlLocation = Main.class.getResource("/view/administrator-view.fxml");
+    URL fxmlLocation = Main.class.getResource("/view/main-view.fxml");
 
     if (fxmlLocation == null) {
-      fxmlLocation = Thread.currentThread().getContextClassLoader().getResource("/view/administrator-view.fxml");
-    }
-
-    if (fxmlLocation == null) {
-      throw new IllegalStateException("No se pudo localizar 'client-view.fxml'. Ejecuta 'compile' en Maven.");
+      throw new IllegalStateException("No se pudo localizar 'main-view.fxml'. Revisa la ruta.");
     }
 
     FXMLLoader fxmlLoader = new FXMLLoader(fxmlLocation);
-    Scene scene = new Scene(fxmlLoader.load(), 850, 550);
+    Scene scene = new Scene(fxmlLoader.load(), 1000, 650);
 
-    primaryStage.setTitle("Administrator Car Rental - Client Management");
+    primaryStage.setTitle("Administrator Car Rental System");
     primaryStage.setScene(scene);
     primaryStage.show();
   }
