@@ -101,6 +101,6 @@ public class VehicleController {
   }
 
   private void loadVehicles() {
-    vehicleList.setAll(vehicleService.getAvailableVehicles());
+    vehicleList.setAll(vehicleService.getAllVehicles());
   }
 }

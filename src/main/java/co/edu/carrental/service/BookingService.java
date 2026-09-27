@@ -1,6 +1,7 @@
 package co.edu.carrental.service;
 import co.edu.carrental.model.Booking;
 import co.edu.carrental.model.AdditionalService;
+import co.edu.carrental.model.Administrator;
 
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.time.LocalDate;
 public class BookingService {
 
     //Lista que guarda las reservas
-    private final List<Booking> bookings = new ArrayList<>();
+    private final List<Booking> bookings = Administrator.getInstance().getBookingList();
 
   //Validacion de si la reserva existe
     private void verifyIfBookingExists(String code){
@@ -96,5 +97,9 @@ public class BookingService {
         }
 
         return income;
+    }
+
+    public List<Booking> getAllBookings() {
+        return new ArrayList<>(bookings);
     }
 }

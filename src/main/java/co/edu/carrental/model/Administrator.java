@@ -1,5 +1,7 @@
 package co.edu.carrental.model;
 
+import co.edu.carrental.model.Administrator;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -12,11 +14,11 @@ public class Administrator {
   private String phoneNumber;
   private String email;
   private String website;
-  private List<Client> clientList;
+  private List<Client> clientList = Administrator.getInstance().getClientList();
   private List<Vehicle> vehicleList;
   private List<RentalModality> rentalModalityList;
   private final List<AdditionalService> additionalServiceList = new ArrayList<>();
-//  private List<Reservations> reservationList;
+  private List<Booking> bookingList = new ArrayList<>();
 
   private Administrator(Builder builder) {
     this.commercialName = builder.commercialName;
@@ -73,6 +75,10 @@ public class Administrator {
 
   public List<Vehicle> getVehicleList() {
     return vehicleList;
+  }
+
+  public List<Booking> getBookingList() {
+    return bookingList;
   }
 
   public List<RentalModality> getRentalModalityList() {
