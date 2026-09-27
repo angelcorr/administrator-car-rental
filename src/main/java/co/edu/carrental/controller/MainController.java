@@ -33,6 +33,10 @@ public class MainController {
     loadView("/view/administrator-view.fxml");
   }
 
+  @FXML
+  private void showBookingView() {loadView("/view/booking-view.fxml");
+  }
+
   private void loadView(String fxmlPath) {
     try {
       URL url = getClass().getResource(fxmlPath);
